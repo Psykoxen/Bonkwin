@@ -1,0 +1,25 @@
+.ad-item {
+  background-color: lightseagreen;
+  border-radius: 15px;
+  padding: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.ad-item p:last-child {
+  font-size: 1.25rem;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid white;
+  padding-top: 2vh;
+  font-weight: bold;
+}
+
+.ads {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vh;
+}

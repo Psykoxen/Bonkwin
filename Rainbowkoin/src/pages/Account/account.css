@@ -1,0 +1,9 @@
+.account a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em;
+  margin: 2vh;
+  font-size: 1.5rem;
+  background-color: lightseagreen;
+  border-radius: 15px;
+}

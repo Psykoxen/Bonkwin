@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+#root {
+  display: flex;
+  flex-direction: row;
+}
+
+#root > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+}
+
+h1 {
+  color: lightseagreen;
+}
+
+#root .form-page {
+  justify-content: center;
+}
