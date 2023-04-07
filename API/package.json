@@ -18,6 +18,7 @@
     "typescript": "^5.0.3"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.4"
+    "@types/better-sqlite3": "^7.6.4",
+    "@types/cors": "^2.8.13"
   }
 }

@@ -3,19 +3,37 @@ let database: Database;
 const connection = (): Promise<void> => {
   return new Promise((resolve) => {
     database = new SQLiteDatabase("data.db");
-    loadDatabase(database);
+    loadUserDatabase(database);
+    loadAdDatabase(database);
     return resolve();
   });
 };
-const loadDatabase = (db: Database): void => {
+const loadUserDatabase = (db: Database): void => {
   db.prepare(
     `
 CREATE TABLE IF NOT EXISTS user
 (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
-name VARCHAR NOT NULL
+email VARCHAR NOT NULL
 )
 `
   ).run();
 };
+
+const loadAdDatabase = (db: Database): void => {
+  db.prepare(
+    `
+CREATE TABLE IF NOT EXISTS ad
+(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+title VARCHAR NOT NULL,
+description VARCHAR NOT NULL,
+price INTEGER NOT NULL,
+userId INTEGER NOT NULL,
+FOREIGN KEY (userId) REFERENCES user(id)
+)
+`
+  ).run();
+};
+
 export { connection, database };

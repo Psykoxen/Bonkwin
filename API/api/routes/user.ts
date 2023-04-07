@@ -3,12 +3,12 @@ import { UserService } from "../services/user";
 const route = require("express").Router();
 
 route.get("/", (req: Request, res: Response) => {
-  const pokemons = UserService.getAllUsers();
-  res.send(pokemons);
+  const users = UserService.getAllUsers();
+  res.send(users);
 });
 route.post("/create", (req: Request, res: Response) => {
-  const { name } = req.body;
-  UserService.createUser(name);
+  const { email } = req.body;
+  UserService.createUser(email);
   res.sendStatus(201);
 });
 
